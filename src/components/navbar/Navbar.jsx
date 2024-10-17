@@ -4,10 +4,9 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
-    console.log(user.photoURL);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+    const from = location?.state?.from?.pathname || '/';
 
     const handleLogout = () => {
         logout()

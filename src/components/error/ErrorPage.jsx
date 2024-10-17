@@ -1,11 +1,15 @@
-import React from 'react'
-import { Link, useRouteError } from 'react-router-dom'
+import React from 'react';
+import { Link, useRouteError } from 'react-router-dom';
 
 const ErrorPage = () => {
-  const { error, status } = useRouteError()
+  const { error, status } = useRouteError();
+
   return (
     <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>
-      <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8 bg-cover bg-no-repeat h-screen w-screen sm:h-auto sm:w-auto sm:bg-center'style={{ backgroundImage: "url('https://www.shutterstock.com/image-photo/skeptic-surprised-cat-thinking-dont-260nw-1905929728.jpg')" }}>
+      <div
+        className='container flex flex-col items-center justify-center px-5 mx-auto my-8 bg-cover bg-no-repeat h-screen w-screen sm:h-auto sm:w-auto sm:bg-center'
+        style={{ backgroundImage: "url('https://www.shutterstock.com/image-photo/skeptic-surprised-cat-thinking-dont-260nw-1905929728.jpg')" }}
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 512 512'
@@ -47,7 +51,7 @@ const ErrorPage = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ErrorPage
+export default ErrorPage;
