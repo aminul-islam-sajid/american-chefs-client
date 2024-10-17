@@ -4,6 +4,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
+    console.log(user?.photoURL);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
@@ -44,7 +45,7 @@ const Navbar = () => {
                         {/* Display user's profile image */}
                         <img
                             className="w-10 h-10 rounded-full border-2 border-white"
-                            src={user?.photoURL || 'https://via.placeholder.com/40'}  // Fallback image
+                            src={user.photoURL || 'https://via.placeholder.com/40'}  // Fallback image
                             alt={user?.displayName || 'User'}  // Fallback text if user name is unavailable
                         />
 
