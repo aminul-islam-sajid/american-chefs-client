@@ -13,7 +13,7 @@ const ErrorPage = () => {
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 512 512'
-          className='w-40 h-40 text-gray-600'
+          className='w-72 h-60  text-gray-600'
         >
           <path
             fill='currentColor'

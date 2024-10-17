@@ -39,7 +39,7 @@ const Navbar = () => {
                 {user ? (
                     <div className="flex items-center space-x-4">
                         {/* Display user's name */}
-                        <h3 className="mr-2">{user?.displayName || 'User'}</h3>
+                        <h3 className="mr-2 hidden sm:block lg:block">{user?.displayName || 'User'}</h3>
 
                         {/* Display user's profile image */}
                         <img

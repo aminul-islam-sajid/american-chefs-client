@@ -34,11 +34,17 @@ const HomeExtra_1 = () => {
     }, []);
 
     return (
-        <div className='flex flex-row space-x-96 font-bold text-4xl p-24  my-4 rounded text-green-800'>
-            <h2 className='ms-24'>Year <span className='text-red-800'>{date.getFullYear()}</span> </h2>
+        <div className='grid sm:grid-cols-3 justify-center align-middle text-center font-bold text-4xl gap-10 py-16 m-8 border-4 border-red-500 rounded text-green-800'>
+            <div>
+                <h2 className='ms-24'>Year <span className='text-red-800'>{date.getFullYear()}</span> </h2>
+            </div>
             {/* Display the total views from localStorage */}
-            <h2>Total view <span className='text-red-800'>{totalViews.toLocaleString()}</span></h2>
-            <h2>Local Time: <span className='text-red-800'>{hours}:{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</span></h2>
+            <div >
+                <h2>Total view <span className='text-red-800'>{totalViews.toLocaleString()}</span></h2>
+            </div>
+            <div>
+                <h2>Local Time: <span className='text-red-800'>{hours}:{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</span></h2>
+            </div>
         </div>
     );
 };
