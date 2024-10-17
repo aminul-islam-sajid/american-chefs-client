@@ -1,11 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Registration = () => {
     const { createUser } = useContext(AuthContext);
-
-    const [accepted, setAccepted] = useState(false);
+    const navigate = useNavigate(); // Hook for navigation
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -14,11 +13,11 @@ const Registration = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        
+
         if (password.length < 6) {
             alert('Password must be at least 6 characters long');
             return;
-          }
+        }
 
         console.log(name, photo, email, password);
 
@@ -26,6 +25,9 @@ const Registration = () => {
             .then((result) => {
                 const createUser = result.user;
                 console.log(createUser);
+
+                // Redirect to the home page
+                navigate('/home', { replace: true });
             })
             .catch((err) => {
                 console.log(err);
@@ -37,7 +39,7 @@ const Registration = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col">
                     <div className="text-center">
-                        <h1 className="text-5xl font-bold">Registration now</h1>
+                        <h1 className="text-5xl font-bold">Register now</h1>
                     </div>
                     <form onSubmit={handleRegister} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
@@ -67,14 +69,14 @@ const Registration = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary" type="submit">
-                                    Registration
+                                    Register
                                 </button>
                             </div>
                         </div>
                     </form>
                     <div className="p-4 ps-6">
                         <a>
-                            Already Have an account? please <Link to="/login" className="text-green-800">Login!</Link>
+                            Already have an account? Please <Link to="/login" className="text-green-800">Login!</Link>
                         </a>
                     </div>
                 </div>

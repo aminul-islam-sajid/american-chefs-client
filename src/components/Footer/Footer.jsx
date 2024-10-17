@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-center p-10 bg-slate-400 text-base-content rounded">
+            <footer className="footer footer-center p-10 bg-slate-800 text-white rounded">
                 <div className="grid grid-flow-col gap-4">
                     <a className="link link-hover"><Link to='/'>Home</Link> </a>
                     <a className="link link-hover"><Link to='/blog'>Blog</Link></a>
                     <a className="link link-hover"><Link to='/about'>About</Link></a>
-                    
+
                 </div>
                 <div>
                     <div className="grid grid-flow-col gap-4">
